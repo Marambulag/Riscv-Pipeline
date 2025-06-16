@@ -1,0 +1,18 @@
+Fitter Status : Successful - Sat Jun 14 21:22:34 2025
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : pipeline
+Top-level Entity Name : riscv_pipeline
+Family : MAX 10
+Device : 10M50DCF672C7G
+Timing Models : Final
+Total logic elements : 12,198 / 49,760 ( 25 % )
+    Total combinational functions : 8,181 / 49,760 ( 16 % )
+    Dedicated logic registers : 8,872 / 49,760 ( 18 % )
+Total registers : 8872
+Total pins : 408 / 500 ( 82 % )
+Total virtual pins : 0
+Total memory bits : 0 / 1,677,312 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 0

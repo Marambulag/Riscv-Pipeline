@@ -1,0 +1,16 @@
+Analysis & Synthesis Status : Successful - Sun Jun 15 23:01:06 2025
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : pipeline
+Top-level Entity Name : riscv_pipeline
+Family : MAX 10
+Total logic elements : 16,039
+    Total combinational functions : 8,180
+    Dedicated logic registers : 8,872
+Total registers : 8872
+Total pins : 408
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0
+UFM blocks : 0
+ADC blocks : 0

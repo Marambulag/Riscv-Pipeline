@@ -1,0 +1,87 @@
+`timescale 1ns / 1ps
+
+module tb_decode;
+
+    // Inputs
+    reg [31:0] instr;
+    reg RegWriteW;
+    reg [4:0] rdW;
+    reg [31:0] resultW;
+
+    // Outputs
+    wire [31:0] rdata1, rdata2, imm_ext;
+    wire [4:0] rs1, rs2, rd;
+    wire [6:0] opcode, funct7;
+    wire [2:0] funct3;
+    wire RegWrite, MemRead, MemWrite, ALUSrc, Branch, Jump;
+    wire [1:0] ALUOp, ResultSrc;
+
+    // Clock/reset for register file (just dummy for async read)
+    reg clk = 0;
+    reg reset = 0;
+
+    // Instantiate the decode module
+    decode dut (
+        .instr(instr),
+        .RegWriteW(RegWriteW),
+        .rdW(rdW),
+        .resultW(resultW),
+        .rdata1(rdata1),
+        .rdata2(rdata2),
+        .imm_ext(imm_ext),
+        .rs1(rs1),
+        .rs2(rs2),
+        .rd(rd),
+        .opcode(opcode),
+        .funct3(funct3),
+        .funct7(funct7),
+        .RegWrite(RegWrite),
+        .MemRead(MemRead),
+        .MemWrite(MemWrite),
+        .ALUOp(ALUOp),
+        .ALUSrc(ALUSrc),
+        .Branch(Branch),
+        .Jump(Jump),
+        .ResultSrc(ResultSrc)
+    );
+
+    // Instantiate register file with dummy clock/reset
+    // If your decode module instantiates its own register_file, you can ignore this.
+
+    initial begin
+        $display("Starting Decode Testbench");
+        
+        // Initialize writeback inputs
+        RegWriteW = 1;
+        rdW = 5'd10;
+        resultW = 32'hDEADBEEF;
+
+        // --- Test 1: R-type instruction (ADD x5, x6, x7) => opcode 0110011
+        instr = 32'b0000000_00111_00110_000_00101_0110011; // funct7 rs2 rs1 funct3 rd opcode
+        #10;
+        $display("R-type ADD: rs1=%d, rs2=%d, rd=%d, funct3=%b, funct7=%b, opcode=%b", rs1, rs2, rd, funct3, funct7, opcode);
+
+        // --- Test 2: I-type instruction (ADDI x8, x1, 12)
+        instr = 32'b000000000110_00001_000_01000_0010011;
+        #10;
+        $display("I-type ADDI: rs1=%d, rd=%d, imm=%d", rs1, rd, imm_ext);
+
+        // --- Test 3: Load (LW x9, 8(x2))
+        instr = 32'b000000001000_00010_010_01001_0000011;
+        #10;
+        $display("LW: rs1=%d, rd=%d, imm=%d", rs1, rd, imm_ext);
+
+        // --- Test 4: Branch (BEQ x1, x2, offset=16)
+        instr = 32'b000000_00010_00001_000_00010_1100011;
+        #10;
+        $display("BEQ: rs1=%d, rs2=%d, imm=%d", rs1, rs2, imm_ext);
+
+        // --- Test 5: JAL x1, offset=32
+        instr = 32'b00000000001000000000000010010111;
+        #10;
+        $display("JAL: rd=%d, imm=%d", rd, imm_ext);
+
+        $finish;
+    end
+
+endmodule

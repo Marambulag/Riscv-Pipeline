@@ -1,0 +1,82 @@
+// riscv_pipeline_tb.v
+// Testbench for the riscv_pipeline module
+
+`timescale 1ns / 1ps
+
+module riscv_pipeline_tb;
+
+    // Clock and Reset signals
+    reg clk;
+    reg reset;
+
+    // Outputs from the pipeline for monitoring
+    wire [31:0] debug_current_pc_if_stage;
+    wire [31:0] debug_instr_id_stage;
+
+    // Instantiate the top-level pipeline module
+    riscv_pipeline dut (
+        .clk(clk),
+        .reset(reset),
+        .debug_current_pc_if_stage(debug_current_pc_if_stage),
+        .debug_instr_id_stage(debug_instr_id_stage)
+    );
+
+    // Clock generation
+    initial begin
+        clk = 0;
+        forever #5 clk = ~clk; // 10ns period, 100 MHz clock
+    end
+
+    // Test sequence
+    initial begin
+        // Apply reset
+        reset = 1;
+        #10; // Hold reset for a short period
+        reset = 0; // Release reset
+
+        // Run for a few clock cycles to observe pipeline stages
+        #100; // Simulate for 100ns (10 clock cycles)
+
+        // Add more simulation time or specific scenarios if needed
+        $display("Simulation finished.");
+        $stop; // Stop simulation
+    end
+
+    // Initial block for Instruction Memory content (optional, if you don't use a separate mem.mem file)
+    // If you use $readmemh in instruction_memory.v, this block can be removed or modified.
+    // This example uses a few simple instructions:
+    // 0x0000_0000: 0x00100093 (addi x1, x0, 1) -> x1 = 1
+    // 0x0000_0004: 0x00200113 (addi x2, x0, 2) -> x2 = 2
+    // 0x0000_0008: 0x003001B3 (add x3, x0, x3) -> NOP effectively, adds x0 to x3
+    // 0x0000_000C: 0x001081B3 (add x3, x1, x2) -> x3 = x1 + x2 (1 + 2 = 3)
+    // 0x0000_0010: 0x00000013 (addi x0, x0, 0) -> NOP
+    // Add more instructions as needed for comprehensive testing.
+
+    // If your instruction_memory.v uses $readmemh, make sure the path to mem.mem is correct.
+    // For this testbench, you can either:
+    // 1. Comment out the initial block below if you rely solely on $readmemh in instruction_memory.v
+    // 2. Or, if instruction_memory.v doesn't use $readmemh, copy this content into your mem.mem file,
+    //    and ensure instruction_memory.v is set up to read it.
+    // Given your instruction_memory.v uses $readmemh, you should prepare your mem.mem file.
+    // The following is just an example of what could be in mem.mem:
+
+    /*
+    Example `mem.mem` content (hex values, one instruction per line):
+    00100093 // addi x1, x0, 1
+    00200113 // addi x2, x0, 2
+    003001B3 // add x3, x0, x3 (effectively add x0 to x3, NOP)
+    001081B3 // add x3, x1, x2 (x3 = x1 + x2)
+    00000013 // NOP
+    */
+
+    // Display messages
+    initial begin
+        $display("--------------------------------------------------");
+        $display("Starting RISC-V Pipeline Simulation");
+        $display("Clock Period: 10ns (100MHz)");
+        $display("--------------------------------------------------");
+        $monitor("Time: %0t | Reset: %b | PC_IF: 0x%h | Instr_ID: 0x%h",
+                 $time, reset, debug_current_pc_if_stage, debug_instr_id_stage);
+    end
+
+endmodule

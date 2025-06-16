@@ -1,0 +1,70 @@
+module decode (
+    input wire clk,
+    input wire reset,
+    input wire [31:0] instr,     // Instruction from IF/ID pipeline register
+    input wire [31:0] pc_plus4,  // PC+4 from IF stage
+    input wire RegWriteW,        // Write enable from WB stage
+    input wire [4:0] rdW,        // Destination register from WB stage
+    input wire [31:0] resultW,   // Result from WB stage
+    output wire [31:0] rdata1,   // Read data 1 (to EX)
+    output wire [31:0] rdata2,   // Read data 2 (to EX)
+    output wire [31:0] imm_ext,  // Extended immediate (to EX)
+    output wire [4:0] rd,        // Destination register (to EX/MEM/WB)
+    output wire [6:0] opcode,    // Opcode (to EX)
+    output wire [2:0] funct3,    // Funct3 (to EX)
+    output wire [6:0] funct7,    // Funct7 (to EX)
+    output wire RegWrite,        // To EX/MEM/WB
+    output wire MemRead,         // To EX/MEM
+    output wire MemWrite,        // To EX/MEM
+    output wire [1:0] ALUOp,     // To EX
+    output wire ALUSrc,          // To EX
+    output wire Branch,          // To EX
+    output wire Jump,            // To EX
+    output wire [1:0] ResultSrc  // To MEM/WB
+);
+
+// Instruction field extraction
+wire [4:0] rs1 = instr[19:15];
+wire [4:0] rs2 = instr[24:20];
+assign rd = instr[11:7];
+assign opcode = instr[6:0];
+assign funct3 = instr[14:12];
+assign funct7 = instr[31:25];
+
+// Control unit
+control_unit ctrl (
+    .opcode(opcode),
+    .funct3(funct3),
+    .funct7(funct7),
+    .RegWrite(RegWrite),
+    .MemRead(MemRead),
+    .MemWrite(MemWrite),
+    .ALUOp(ALUOp),
+    .ALUSrc(ALUSrc),
+    .Branch(Branch),
+    .Jump(Jump),
+    .ResultSrc(ResultSrc),
+    .ImmSel(imm_sel)
+);
+
+// Immediate generator
+imm_gen imm_gen (
+    .instr(instr),
+    .imm_sel(imm_sel),
+    .imm_ext(imm_ext)
+);
+
+// Register file
+register_file reg_file (
+    .clk(clk),
+    .reset(reset),
+    .rs1(rs1),
+    .rs2(rs2),
+    .rd(rdW),
+    .wdata(resultW),
+    .RegWrite(RegWriteW),
+    .rdata1(rdata1),
+    .rdata2(rdata2)
+);
+
+endmodule

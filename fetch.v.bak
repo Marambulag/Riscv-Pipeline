@@ -1,0 +1,45 @@
+module fetch (
+
+	input wire clk,
+	input wire reset,
+	input wire pc_write,
+	input wire pc_scr,
+	input wire [31:0] branch_target,
+	
+	output wire [31:0] pc_out,
+	output wire [31:0] instruction
+	
+);
+	
+	wire [31:0] pc_next, pc_plus4;
+	
+	 pc pc_reg (
+    .clk(clk),
+    .reset(reset),
+    .enable(pc_write),
+    .pc_in(pc_next),
+    .pc_out(pc_out)
+  );
+
+  // PC + 4
+  adder pc_adder (
+    .a(pc_out),
+    .b(32'd4),
+    .y(pc_plus4)
+  );
+
+  // PC Mux: branch or PC+4
+  mux2 #(32) pc_mux (
+    .a(pc_plus4),
+    .b(branch_target),
+    .sel(pc_src),
+    .y(pc_next)
+  );
+
+  // Instruction memory
+  instruction_memory imem (
+    .addr(pc_out),
+    .instruction(instruction)
+  );
+
+endmodule

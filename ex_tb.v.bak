@@ -1,0 +1,121 @@
+`timescale 1ns / 1ps
+
+module ex_tb();
+
+    // ALU Control inputs
+    reg [2:0] alu_op;
+    reg [2:0] funct3;
+    reg [6:0] funct7;
+    wire [3:0] alu_ctrl_out;
+
+    // ALU inputs
+    reg [31:0] operand_a, operand_b;
+    wire [31:0] alu_result;
+    wire zero_flag, less_than_flag, overflow_flag;
+
+    // Mux2 inputs
+    reg sel2;
+    wire [31:0] mux2_out;
+
+    // Mux4 inputs
+    reg [1:0] sel4;
+    wire [31:0] mux4_out;
+
+    // Dummy inputs for muxes
+    wire [31:0] in0 = 32'hAAAA_AAAA;
+    wire [31:0] in1 = 32'hBBBB_BBBB;
+    wire [31:0] in2 = 32'hCCCC_CCCC;
+    wire [31:0] in3 = 32'hDDDD_DDDD;
+
+    // Instantiate ALU Control
+    alu_control alu_ctrl_inst (
+        .alu_op(alu_op),
+        .funct3(funct3),
+        .funct7(funct7),
+        .alu_control_out(alu_ctrl_out)
+    );
+
+    // Instantiate ALU
+    alu alu_inst (
+        .operand_a(operand_a),
+        .operand_b(operand_b),
+        .alu_control_code(alu_ctrl_out),
+        .alu_result(alu_result),
+        .zero_flag(zero_flag),
+        .less_than_flag(less_than_flag),
+        .overflow_flag(overflow_flag)
+    );
+
+    // Instantiate Mux2
+    mux2 mux2_inst (
+        .in0(operand_a),
+        .in1(operand_b),
+        .sel(sel2),
+        .out(mux2_out)
+    );
+
+    // Instantiate Mux4
+    mux4 mux4_inst (
+        .in0(in0),
+        .in1(in1),
+        .in2(in2),
+        .in3(in3),
+        .sel(sel4),
+        .out(mux4_out)
+    );
+
+    initial begin
+        $display("---- Testbench for EX Stage Modules ----");
+
+        // Test 1: ADD (R-type: funct7=0x00, funct3=0x0, alu_op=000)
+        alu_op = 3'b000;
+        funct3 = 3'b000;
+        funct7 = 7'b0000000;
+        operand_a = 32'd10;
+        operand_b = 32'd20;
+        sel2 = 0;
+        sel4 = 2'b00;
+        #10;
+
+        $display("ADD Result: %d, Zero: %b", alu_result, zero_flag);
+
+        // Test 2: SUB (R-type: funct7=0x20, funct3=0x0, alu_op=000)
+        funct7 = 7'b0100000;
+        #10;
+        $display("SUB Result: %d, Zero: %b", alu_result, zero_flag);
+
+        // Test 3: SLT (Signed less-than)
+        funct3 = 3'b010;
+        funct7 = 7'b0000000;
+        operand_a = -5;
+        operand_b = 3;
+        #10;
+        $display("SLT Result: %d, LT: %b", alu_result, less_than_flag);
+
+        // Test 4: ORI (I-type: alu_op=001, funct3=0x6)
+        alu_op = 3'b001;
+        funct3 = 3'b110;
+        funct7 = 7'b0000000;
+        operand_a = 32'hF0F0_F0F0;
+        operand_b = 32'h0F0F_0F0F;
+        #10;
+        $display("ORI Result: %h", alu_result);
+
+        // Test 5: Mux2
+        sel2 = 0;
+        #5;
+        $display("Mux2 sel=0 -> %d", mux2_out);
+        sel2 = 1;
+        #5;
+        $display("Mux2 sel=1 -> %d", mux2_out);
+
+        // Test 6: Mux4
+        sel4 = 2'b00; #5; $display("Mux4 sel=00 -> %h", mux4_out);
+        sel4 = 2'b01; #5; $display("Mux4 sel=01 -> %h", mux4_out);
+        sel4 = 2'b10; #5; $display("Mux4 sel=10 -> %h", mux4_out);
+        sel4 = 2'b11; #5; $display("Mux4 sel=11 -> %h", mux4_out);
+
+        $finish;
+    end
+
+endmodule

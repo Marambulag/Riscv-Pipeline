@@ -1,0 +1,744 @@
+ -- Copyright (C) 2025  Altera Corporation. All rights reserved.
+ -- Your use of Altera Corporation's design tools, logic functions 
+ -- and other software and tools, and any partner logic 
+ -- functions, and any output files from any of the foregoing 
+ -- (including device programming or simulation files), and any 
+ -- associated documentation or information are expressly subject 
+ -- to the terms and conditions of the Altera Program License 
+ -- Subscription Agreement, the Altera Quartus Prime License Agreement,
+ -- the Altera IP License Agreement, or other applicable license
+ -- agreement, including, without limitation, that your use is for
+ -- the sole purpose of programming logic devices manufactured by
+ -- Altera and sold by Altera or its authorized distributors.  Please
+ -- refer to the Altera Software License Subscription Agreements 
+ -- on the Quartus Prime software download page.
+ -- 
+ -- This is a Quartus Prime output file. It is for reporting purposes only, and is
+ -- not intended for use as a Quartus Prime input file. This file cannot be used
+ -- to make Quartus Prime pin assignments - for instructions on how to make pin
+ -- assignments, please see Quartus Prime help.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- NC            : No Connect. This pin has no internal connection to the device.
+ -- DNU           : Do Not Use. This pin MUST NOT be connected.
+ -- VCCINT        : Dedicated power pin, which MUST be connected to VCC  (1.2V).
+ -- VCCIO         : Dedicated power pin, which MUST be connected to VCC
+ --                 of its bank.
+ --                  Bank 1A:       2.5V
+ --                  Bank 1B:       2.5V
+ --                  Bank 2:       2.5V
+ --                  Bank 3:       2.5V
+ --                  Bank 4:       2.5V
+ --                  Bank 5:       2.5V
+ --                  Bank 6:       2.5V
+ --                  Bank 7:       2.5V
+ --                  Bank 8:       2.5V
+ -- GND           : Dedicated ground pin. Dedicated GND pins MUST be connected to GND.
+ --                  It can also be used to report unused dedicated pins. The connection
+ --                  on the board for unused dedicated pins depends on whether this will
+ --                  be used in a future design. One example is device migration. When
+ --                  using device migration, refer to the device pin-tables. If it is a
+ --                  GND pin in the pin table or if it will not be used in a future design
+ --                  for another purpose the it MUST be connected to GND. If it is an unused
+ --                  dedicated pin, then it can be connected to a valid signal on the board
+ --                  (low, high, or toggling) if that signal is required for a different
+ --                  revision of the design.
+ -- GND+          : Unused input pin. It can also be used to report unused dual-purpose pins.
+ --                  This pin should be connected to GND. It may also be connected  to a
+ --                  valid signal  on the board  (low, high, or toggling)  if that signal
+ --                  is required for a different revision of the design.
+ -- GND*          : Unused  I/O  pin. Connect each pin marked GND* directly to GND
+ --                  or leave it unconnected.
+ -- RESERVED      : Unused I/O pin, which MUST be left unconnected.
+ -- RESERVED_INPUT    : Pin is tri-stated and should be connected to the board.
+ -- RESERVED_INPUT_WITH_WEAK_PULLUP    : Pin is tri-stated with internal weak pull-up resistor.
+ -- RESERVED_INPUT_WITH_BUS_HOLD       : Pin is tri-stated with bus-hold circuitry.
+ -- RESERVED_OUTPUT_DRIVEN_HIGH        : Pin is output driven high.
+ ---------------------------------------------------------------------------------
+
+
+
+ ---------------------------------------------------------------------------------
+ -- Pin directions (input, output or bidir) are based on device operating in user mode.
+ ---------------------------------------------------------------------------------
+
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+CHIP  "pipeline"  ASSIGNED TO AN: 10M50DCF672C7G
+
+Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
+-------------------------------------------------------------------------------------------------------------
+GND                          : A2        : gnd    :                   :         :           :                
+mem_addr_mem_stage[7]        : A3        : output : 2.5 V             :         : 8         : N              
+mem_addr_mem_stage[8]        : A4        : output : 2.5 V             :         : 8         : N              
+mem_addr_mem_stage[4]        : A5        : output : 2.5 V             :         : 8         : N              
+alu_result_ex_stage[25]      : A6        : output : 2.5 V             :         : 8         : N              
+rd_out_ex_stage[2]           : A7        : output : 2.5 V             :         : 8         : N              
+mem_write_data_mem_stage[11] : A8        : output : 2.5 V             :         : 8         : N              
+wb_result_wb_stage[0]        : A9        : output : 2.5 V             :         : 8         : N              
+alu_result_ex_stage[2]       : A10       : output : 2.5 V             :         : 8         : N              
+read_data_mem_stage[1]       : A11       : output : 2.5 V             :         : 8         : N              
+mem_addr_mem_stage[15]       : A12       : output : 2.5 V             :         : 7         : N              
+imm_ext_out_ex_stage[30]     : A13       : output : 2.5 V             :         : 7         : N              
+mem_addr_mem_stage[30]       : A14       : output : 2.5 V             :         : 7         : N              
+imm_ext_out_ex_stage[22]     : A15       : output : 2.5 V             :         : 7         : N              
+wb_result_wb_stage[1]        : A16       : output : 2.5 V             :         : 7         : N              
+wb_result_wb_stage[6]        : A17       : output : 2.5 V             :         : 7         : N              
+read_data_mem_stage[10]      : A18       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[2]       : A19       : output : 2.5 V             :         : 7         : N              
+rdata2_out_ex_stage[1]       : A20       : output : 2.5 V             :         : 7         : N              
+instr_id_stage[1]            : A21       : output : 2.5 V             :         : 7         : N              
+instr_id_stage[16]           : A22       : output : 2.5 V             :         : 7         : N              
+rdata2_out_ex_stage[6]       : A23       : output : 2.5 V             :         : 6         : N              
+reg_write_out_ex_stage       : A24       : output : 2.5 V             :         : 6         : N              
+GND                          : A25       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA1       :        :                   :         : 2         :                
+wb_rd_wb_stage[4]            : AA2       : output : 2.5 V             :         : 2         : N              
+branch_taken_ex_stage        : AA3       : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA4       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA5       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA6       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA7       :        :                   :         : 3         :                
+instr_id_stage[31]           : AA8       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AA9       :        :                   :         : 3         :                
+imm_ext_out_ex_stage[28]     : AA10      : output : 2.5 V             :         : 3         : N              
+read_data_mem_stage[22]      : AA11      : output : 2.5 V             :         : 3         : N              
+mem_write_data_mem_stage[21] : AA12      : output : 2.5 V             :         : 3         : N              
+alu_result_ex_stage[18]      : AA13      : output : 2.5 V             :         : 4         : N              
+read_data_mem_stage[19]      : AA14      : output : 2.5 V             :         : 4         : N              
+imm_ext_out_ex_stage[11]     : AA15      : output : 2.5 V             :         : 4         : N              
+rdata1_out_ex_stage[19]      : AA16      : output : 2.5 V             :         : 4         : N              
+rdata2_out_ex_stage[14]      : AA17      : output : 2.5 V             :         : 4         : N              
+instr_id_stage[10]           : AA18      : output : 2.5 V             :         : 4         : N              
+rdata2_out_ex_stage[21]      : AA19      : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[14]   : AA20      : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[4]    : AA21      : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[24]   : AA22      : output : 2.5 V             :         : 5         : N              
+jump_target_ex_stage[24]     : AA23      : output : 2.5 V             :         : 5         : N              
+rdata2_out_ex_stage[27]      : AA24      : output : 2.5 V             :         : 5         : N              
+rdata2_out_ex_stage[20]      : AA25      : output : 2.5 V             :         : 5         : N              
+jump_target_ex_stage[20]     : AA26      : output : 2.5 V             :         : 5         : N              
+mem_write_data_mem_stage[0]  : AB1       : output : 2.5 V             :         : 2         : N              
+GND                          : AB2       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB3       :        :                   :         : 2         :                
+imm_ext_out_ex_stage[9]      : AB4       : output : 2.5 V             :         : 2         : N              
+GND                          : AB5       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AB6       :        :                   :         : 3         :                
+imm_ext_out_ex_stage[23]     : AB7       : output : 2.5 V             :         : 3         : N              
+GND                          : AB8       : gnd    :                   :         :           :                
+read_data_mem_stage[27]      : AB9       : output : 2.5 V             :         : 3         : N              
+read_data_mem_stage[9]       : AB10      : output : 2.5 V             :         : 3         : N              
+GND                          : AB11      : gnd    :                   :         :           :                
+mem_addr_mem_stage[31]       : AB12      : output : 2.5 V             :         : 4         : N              
+rdata2_out_ex_stage[22]      : AB13      : output : 2.5 V             :         : 4         : N              
+GND                          : AB14      : gnd    :                   :         :           :                
+rdata2_out_ex_stage[28]      : AB15      : output : 2.5 V             :         : 4         : N              
+rdata2_out_ex_stage[25]      : AB16      : output : 2.5 V             :         : 4         : N              
+GND                          : AB17      : gnd    :                   :         :           :                
+jump_target_ex_stage[29]     : AB18      : output : 2.5 V             :         : 4         : N              
+jump_target_ex_stage[30]     : AB19      : output : 2.5 V             :         : 4         : N              
+branch_target_ex_stage[1]    : AB20      : output : 2.5 V             :         : 4         : N              
+GND                          : AB21      : gnd    :                   :         :           :                
+branch_target_ex_stage[19]   : AB22      : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[17]   : AB23      : output : 2.5 V             :         : 5         : N              
+jump_target_ex_stage[6]      : AB24      : output : 2.5 V             :         : 5         : N              
+GND                          : AB25      : gnd    :                   :         :           :                
+alu_src_out_ex_stage         : AB26      : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC1       :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC2       :        :                   :         : 2         :                
+alu_control_code_ex_stage[1] : AC3       : output : 2.5 V             :         : 2         : N              
+alu_control_code_ex_stage[2] : AC4       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC5       :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : AC6       :        :                   :         : 3         :                
+mem_write_data_mem_stage[14] : AC7       : output : 2.5 V             :         : 3         : N              
+read_data_mem_stage[29]      : AC8       : output : 2.5 V             :         : 3         : N              
+read_data_mem_stage[25]      : AC9       : output : 2.5 V             :         : 3         : N              
+alu_result_ex_stage[13]      : AC10      : output : 2.5 V             :         : 3         : N              
+mem_addr_mem_stage[16]       : AC11      : output : 2.5 V             :         : 4         : N              
+alu_result_ex_stage[31]      : AC12      : output : 2.5 V             :         : 4         : N              
+mem_addr_mem_stage[25]       : AC13      : output : 2.5 V             :         : 4         : N              
+rdata1_out_ex_stage[20]      : AC14      : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[26]       : AC15      : output : 2.5 V             :         : 4         : N              
+current_pc_if_stage[19]      : AC16      : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[11]       : AC17      : output : 2.5 V             :         : 4         : N              
+rdata1_out_ex_stage[6]       : AC18      : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[23]       : AC19      : output : 2.5 V             :         : 4         : N              
+jump_target_ex_stage[18]     : AC20      : output : 2.5 V             :         : 4         : N              
+current_pc_if_stage[23]      : AC21      : output : 2.5 V             :         : 4         : N              
+instr_id_stage[21]           : AC22      : output : 2.5 V             :         : 5         : N              
+instr_id_stage[20]           : AC23      : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[17]      : AC24      : output : 2.5 V             :         : 5         : N              
+jump_target_ex_stage[23]     : AC25      : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[31]   : AC26      : output : 2.5 V             :         : 5         : N              
+mem_write_data_mem_stage[4]  : AD1       : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD2       :        :                   :         : 2         :                
+imm_ext_out_ex_stage[7]      : AD3       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AD4       :        :                   :         : 3         :                
+imm_ext_out_ex_stage[12]     : AD5       : output : 2.5 V             :         : 3         : N              
+read_data_mem_stage[16]      : AD6       : output : 2.5 V             :         : 3         : N              
+rdata2_out_ex_stage[16]      : AD7       : output : 2.5 V             :         : 3         : N              
+read_data_mem_stage[23]      : AD8       : output : 2.5 V             :         : 3         : N              
+read_data_mem_stage[26]      : AD9       : output : 2.5 V             :         : 3         : N              
+alu_result_ex_stage[8]       : AD10      : output : 2.5 V             :         : 3         : N              
+alu_result_ex_stage[29]      : AD11      : output : 2.5 V             :         : 4         : N              
+mem_addr_mem_stage[28]       : AD12      : output : 2.5 V             :         : 4         : N              
+mem_addr_mem_stage[29]       : AD13      : output : 2.5 V             :         : 4         : N              
+rdata1_out_ex_stage[27]      : AD14      : output : 2.5 V             :         : 4         : N              
+read_data_mem_stage[18]      : AD15      : output : 2.5 V             :         : 4         : N              
+mem_addr_mem_stage[22]       : AD16      : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[18]       : AD17      : output : 2.5 V             :         : 4         : N              
+mem_write_data_mem_stage[16] : AD18      : output : 2.5 V             :         : 4         : N              
+wb_rd_wb_stage[3]            : AD19      : output : 2.5 V             :         : 4         : N              
+rdata2_out_ex_stage[24]      : AD20      : output : 2.5 V             :         : 4         : N              
+mem_write_data_mem_stage[22] : AD21      : output : 2.5 V             :         : 4         : N              
+jump_target_ex_stage[10]     : AD22      : output : 2.5 V             :         : 4         : N              
+branch_target_ex_stage[12]   : AD23      : output : 2.5 V             :         : 5         : N              
+mem_write_data_mem_stage[18] : AD24      : output : 2.5 V             :         : 5         : N              
+mem_write_data_mem_stage[20] : AD25      : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[20]   : AD26      : output : 2.5 V             :         : 5         : N              
+GND                          : AE1       : gnd    :                   :         :           :                
+imm_ext_out_ex_stage[13]     : AE2       : output : 2.5 V             :         : 3         : N              
+alu_result_ex_stage[21]      : AE3       : output : 2.5 V             :         : 3         : N              
+alu_result_ex_stage[15]      : AE4       : output : 2.5 V             :         : 3         : N              
+GND                          : AE5       : gnd    :                   :         :           :                
+instr_id_stage[19]           : AE6       : output : 2.5 V             :         : 3         : N              
+rd_out_ex_stage[0]           : AE7       : output : 2.5 V             :         : 3         : N              
+alu_result_ex_stage[23]      : AE8       : output : 2.5 V             :         : 3         : N              
+GND                          : AE9       : gnd    :                   :         :           :                
+read_data_mem_stage[20]      : AE10      : output : 2.5 V             :         : 4         : N              
+alu_result_ex_stage[0]       : AE11      : output : 2.5 V             :         : 4         : N              
+alu_result_ex_stage[16]      : AE12      : output : 2.5 V             :         : 4         : N              
+GND                          : AE13      : gnd    :                   :         :           :                
+mem_addr_mem_stage[10]       : AE14      : output : 2.5 V             :         : 4         : N              
+rdata1_out_ex_stage[25]      : AE15      : output : 2.5 V             :         : 4         : N              
+GND                          : AE16      : gnd    :                   :         :           :                
+instr_id_stage[4]            : AE17      : output : 2.5 V             :         : 4         : N              
+rdata1_out_ex_stage[16]      : AE18      : output : 2.5 V             :         : 4         : N              
+GND                          : AE19      : gnd    :                   :         :           :                
+rdata1_out_ex_stage[17]      : AE20      : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[25]       : AE21      : output : 2.5 V             :         : 4         : N              
+GND                          : AE22      : gnd    :                   :         :           :                
+wb_result_wb_stage[29]       : AE23      : output : 2.5 V             :         : 4         : N              
+branch_target_ex_stage[16]   : AE24      : output : 2.5 V             :         : 5         : N              
+rdata2_out_ex_stage[29]      : AE25      : output : 2.5 V             :         : 5         : N              
+GND                          : AE26      : gnd    :                   :         :           :                
+GND                          : AF2       : gnd    :                   :         :           :                
+alu_result_ex_stage[28]      : AF3       : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : AF4       :        :                   :         : 3         :                
+imm_ext_out_ex_stage[26]     : AF5       : output : 2.5 V             :         : 3         : N              
+read_data_mem_stage[11]      : AF6       : output : 2.5 V             :         : 3         : N              
+mem_addr_mem_stage[9]        : AF7       : output : 2.5 V             :         : 3         : N              
+rd_out_ex_stage[1]           : AF8       : output : 2.5 V             :         : 3         : N              
+read_data_mem_stage[21]      : AF9       : output : 2.5 V             :         : 3         : N              
+alu_result_ex_stage[22]      : AF10      : output : 2.5 V             :         : 4         : N              
+alu_result_ex_stage[20]      : AF11      : output : 2.5 V             :         : 4         : N              
+mem_addr_mem_stage[11]       : AF12      : output : 2.5 V             :         : 4         : N              
+read_data_mem_stage[17]      : AF13      : output : 2.5 V             :         : 4         : N              
+mem_write_out_ex_stage[0]    : AF14      : output : 2.5 V             :         : 4         : N              
+mem_addr_mem_stage[18]       : AF15      : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[22]       : AF16      : output : 2.5 V             :         : 4         : N              
+rdata1_out_ex_stage[3]       : AF17      : output : 2.5 V             :         : 4         : N              
+mem_write_data_mem_stage[9]  : AF18      : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[8]        : AF19      : output : 2.5 V             :         : 4         : N              
+rdata1_out_ex_stage[22]      : AF20      : output : 2.5 V             :         : 4         : N              
+rdata2_out_ex_stage[23]      : AF21      : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[28]       : AF22      : output : 2.5 V             :         : 4         : N              
+mem_write_data_mem_stage[23] : AF23      : output : 2.5 V             :         : 4         : N              
+current_pc_if_stage[12]      : AF24      : output : 2.5 V             :         : 4         : N              
+GND                          : AF25      : gnd    :                   :         :           :                
+GND                          : B1        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B2        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : B3        :        :                   :         : 1B        :                
+mem_write_data_mem_stage[6]  : B4        : output : 2.5 V             :         : 8         : N              
+GND                          : B5        : gnd    :                   :         :           :                
+mem_read_out_ex_stage        : B6        : output : 2.5 V             :         : 8         : N              
+mem_write_data_mem_stage[1]  : B7        : output : 2.5 V             :         : 8         : N              
+wb_result_wb_stage[4]        : B8        : output : 2.5 V             :         : 8         : N              
+read_data_mem_stage[13]      : B9        : output : 2.5 V             :         : 8         : N              
+alu_result_ex_stage[6]       : B10       : output : 2.5 V             :         : 8         : N              
+alu_result_ex_stage[10]      : B11       : output : 2.5 V             :         : 8         : N              
+imm_ext_out_ex_stage[19]     : B12       : output : 2.5 V             :         : 7         : N              
+mem_addr_mem_stage[21]       : B13       : output : 2.5 V             :         : 7         : N              
+GND                          : B14       : gnd    :                   :         :           :                
+read_data_mem_stage[15]      : B15       : output : 2.5 V             :         : 7         : N              
+mem_write_data_mem_stage[19] : B16       : output : 2.5 V             :         : 7         : N              
+GND                          : B17       : gnd    :                   :         :           :                
+instr_id_stage[7]            : B18       : output : 2.5 V             :         : 7         : N              
+instr_id_stage[23]           : B19       : output : 2.5 V             :         : 7         : N              
+GND                          : B20       : gnd    :                   :         :           :                
+wb_rd_wb_stage[2]            : B21       : output : 2.5 V             :         : 7         : N              
+instr_id_stage[15]           : B22       : output : 2.5 V             :         : 7         : N              
+jump_target_ex_stage[14]     : B23       : output : 2.5 V             :         : 6         : N              
+imm_ext_out_ex_stage[0]      : B24       : output : 2.5 V             :         : 6         : N              
+wb_result_wb_stage[5]        : B25       : output : 2.5 V             :         : 6         : N              
+GND                          : B26       : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C1        :        :                   :         : 1B        :                
+~ALTERA_TMS~ / RESERVED_INPUT_WITH_WEAK_PULLUP : C2        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
+GND                          : C3        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : C4        :        :                   :         : 1B        :                
+mem_write_data_mem_stage[5]  : C5        : output : 2.5 V             :         : 8         : N              
+rdata2_out_ex_stage[15]      : C6        : output : 2.5 V             :         : 8         : N              
+rdata2_out_ex_stage[4]       : C7        : output : 2.5 V             :         : 8         : N              
+GND                          : C8        : gnd    :                   :         :           :                
+wb_result_wb_stage[7]        : C9        : output : 2.5 V             :         : 8         : N              
+read_data_mem_stage[5]       : C10       : output : 2.5 V             :         : 8         : N              
+GND                          : C11       : gnd    :                   :         :           :                
+rdata2_out_ex_stage[7]       : C12       : output : 2.5 V             :         : 8         : N              
+imm_ext_out_ex_stage[24]     : C13       : output : 2.5 V             :         : 7         : N              
+read_data_mem_stage[3]       : C14       : output : 2.5 V             :         : 7         : N              
+rdata2_out_ex_stage[3]       : C15       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : C16       :        :                   :         : 7         :                
+imm_ext_out_ex_stage[1]      : C17       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[10]      : C18       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[31]      : C19       : output : 2.5 V             :         : 7         : N              
+wb_rd_wb_stage[0]            : C20       : output : 2.5 V             :         : 7         : N              
+wb_rd_wb_stage[1]            : C21       : output : 2.5 V             :         : 7         : N              
+instr_id_stage[18]           : C22       : output : 2.5 V             :         : 7         : N              
+GND                          : C23       : gnd    :                   :         :           :                
+current_pc_if_stage[14]      : C24       : output : 2.5 V             :         : 6         : N              
+instr_id_stage[5]            : C25       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[7]    : C26       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D1        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : D2        :        :                   :         : 1B        :                
+~ALTERA_TCK~ / RESERVED_INPUT : D3        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D4        :        :                   :         : 1B        :                
+mem_addr_mem_stage[2]        : D5        : output : 2.5 V             :         : 8         : N              
+rdata2_out_ex_stage[0]       : D6        : output : 2.5 V             :         : 8         : N              
+mem_write_data_mem_stage[3]  : D7        : output : 2.5 V             :         : 8         : N              
+mem_addr_mem_stage[6]        : D8        : output : 2.5 V             :         : 8         : N              
+read_data_mem_stage[6]       : D9        : output : 2.5 V             :         : 8         : N              
+wb_result_wb_stage[15]       : D10       : output : 2.5 V             :         : 8         : N              
+read_data_mem_stage[4]       : D11       : output : 2.5 V             :         : 8         : N              
+read_data_mem_stage[2]       : D12       : output : 2.5 V             :         : 8         : N              
+mem_addr_mem_stage[24]       : D13       : output : 2.5 V             :         : 7         : N              
+rdata2_out_ex_stage[11]      : D14       : output : 2.5 V             :         : 7         : N              
+rdata2_out_ex_stage[13]      : D15       : output : 2.5 V             :         : 7         : N              
+GND                          : D16       : gnd    :                   :         :           :                
+instr_id_stage[29]           : D17       : output : 2.5 V             :         : 7         : N              
+instr_id_stage[9]            : D18       : output : 2.5 V             :         : 7         : N              
+read_data_mem_stage[14]      : D19       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D20       :        :                   :         : 7         :                
+rdata1_out_ex_stage[11]      : D21       : output : 2.5 V             :         : 7         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D22       :        :                   :         : 7         :                
+branch_target_ex_stage[27]   : D23       : output : 2.5 V             :         : 6         : N              
+rdata2_out_ex_stage[12]      : D24       : output : 2.5 V             :         : 6         : N              
+rdata2_out_ex_stage[10]      : D25       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[10]   : D26       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : E1        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E2        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E3        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : E4        :        :                   :         : 1A        :                
+GND                          : E5        : gnd    :                   :         :           :                
+GND                          : E6        : gnd    :                   :         :           :                
+mem_write_data_mem_stage[2]  : E7        : output : 2.5 V             :         : 8         : N              
+alu_result_ex_stage[9]       : E8        : output : 2.5 V             :         : 8         : N              
+read_data_mem_stage[31]      : E9        : output : 2.5 V             :         : 8         : N              
+mem_addr_mem_stage[3]        : E10       : output : 2.5 V             :         : 8         : N              
+alu_result_ex_stage[7]       : E11       : output : 2.5 V             :         : 8         : N              
+read_data_mem_stage[0]       : E12       : output : 2.5 V             :         : 8         : N              
+GND                          : E13       : gnd    :                   :         :           :                
+imm_ext_out_ex_stage[21]     : E14       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[23]      : E15       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[29]      : E16       : output : 2.5 V             :         : 7         : N              
+instr_id_stage[0]            : E17       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[5]       : E18       : output : 2.5 V             :         : 7         : N              
+GND                          : E19       : gnd    :                   :         :           :                
+mem_addr_mem_stage[23]       : E20       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[21]      : E21       : output : 2.5 V             :         : 6         : N              
+rdata1_out_ex_stage[30]      : E22       : output : 2.5 V             :         : 6         : N              
+rdata1_out_ex_stage[8]       : E23       : output : 2.5 V             :         : 6         : N              
+read_data_mem_stage[12]      : E24       : output : 2.5 V             :         : 6         : N              
+GND                          : E25       : gnd    :                   :         :           :                
+jump_target_ex_stage[4]      : E26       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F1        :        :                   :         : 1B        :                
+read_data_mem_stage[30]      : F2        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F3        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : F4        :        :                   :         : 1A        :                
+instr_id_stage[26]           : F5        : output : 2.5 V             :         : 1A        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : F6        :        :                   :         : 1A        :                
+GND                          : F7        : gnd    :                   :         :           :                
+~ALTERA_CONF_DONE~ / RESERVED_INPUT : F8        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
+~ALTERA_nSTATUS~ / RESERVED_INPUT : F9        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
+mem_addr_mem_stage[1]        : F10       : output : 2.5 V             :         : 8         : N              
+mem_addr_mem_stage[12]       : F11       : output : 2.5 V             :         : 8         : N              
+alu_result_ex_stage[27]      : F12       : output : 2.5 V             :         : 8         : N              
+rdata2_out_ex_stage[2]       : F13       : output : 2.5 V             :         : 7         : N              
+read_data_mem_stage[8]       : F14       : output : 2.5 V             :         : 7         : N              
+instr_id_stage[25]           : F15       : output : 2.5 V             :         : 7         : N              
+imm_ext_out_ex_stage[17]     : F16       : output : 2.5 V             :         : 7         : N              
+wb_result_wb_stage[24]       : F17       : output : 2.5 V             :         : 7         : N              
+wb_result_wb_stage[2]        : F18       : output : 2.5 V             :         : 7         : N              
+jump_target_ex_stage[25]     : F19       : output : 2.5 V             :         : 7         : N              
+instr_id_stage[8]            : F20       : output : 2.5 V             :         : 7         : N              
+mem_write_data_mem_stage[17] : F21       : output : 2.5 V             :         : 6         : N              
+GND                          : F22       : gnd    :                   :         :           :                
+rdata1_out_ex_stage[4]       : F23       : output : 2.5 V             :         : 6         : N              
+mem_write_data_mem_stage[25] : F24       : output : 2.5 V             :         : 6         : N              
+current_pc_if_stage[24]      : F25       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[2]    : F26       : output : 2.5 V             :         : 6         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : G1        :        :                   :         : 1B        :                
+GND                          : G2        : gnd    :                   :         :           :                
+imm_ext_out_ex_stage[8]      : G3        : output : 2.5 V             :         : 1A        : N              
+instr_id_stage[3]            : G4        : output : 2.5 V             :         : 1A        : N              
+GND                          : G5        : gnd    :                   :         :           :                
+imm_ext_out_ex_stage[10]     : G6        : output : 2.5 V             :         : 1A        : N              
+mem_addr_mem_stage[0]        : G7        : output : 2.5 V             :         : 1A        : N              
+GND                          : G8        : gnd    :                   :         :           :                
+~ALTERA_nCONFIG~ / RESERVED_INPUT : G9        : input  : 2.5 V Schmitt Trigger :         : 8         : N              
+mem_addr_mem_stage[13]       : G10       : output : 2.5 V             :         : 8         : N              
+GND                          : G11       : gnd    :                   :         :           :                
+alu_result_ex_stage[4]       : G12       : output : 2.5 V             :         : 8         : N              
+wb_result_wb_stage[3]        : G13       : output : 2.5 V             :         : 7         : N              
+rdata2_out_ex_stage[8]       : G14       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[14]      : G15       : output : 2.5 V             :         : 7         : N              
+GND                          : G16       : gnd    :                   :         :           :                
+mem_write_data_mem_stage[31] : G17       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[0]       : G18       : output : 2.5 V             :         : 7         : N              
+jump_target_ex_stage[21]     : G19       : output : 2.5 V             :         : 7         : N              
+mem_addr_mem_stage[26]       : G20       : output : 2.5 V             :         : 6         : N              
+rdata1_out_ex_stage[15]      : G21       : output : 2.5 V             :         : 6         : N              
+rdata1_out_ex_stage[13]      : G22       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[13]   : G23       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[5]    : G24       : output : 2.5 V             :         : 6         : N              
+wb_result_wb_stage[9]        : G25       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[0]      : G26       : output : 2.5 V             :         : 6         : N              
+instr_id_stage[17]           : H1        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : H2        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : H3        :        :                   :         : 1B        :                
+GND                          : H4        : gnd    :                   :         :           :                
+GND                          : H5        : gnd    :                   :         :           :                
+VCCA3                        : H6        : power  :                   : 2.5V    :           :                
+GND                          : H7        : gnd    :                   :         :           :                
+VCCD_PLL3                    : H8        : power  :                   : 1.2V    :           :                
+GND                          : H9        : gnd    :                   :         :           :                
+VCCIO8                       : H10       : power  :                   : 2.5V    : 8         :                
+VCCIO8                       : H11       : power  :                   : 2.5V    : 8         :                
+VCCIO8                       : H12       : power  :                   : 2.5V    : 8         :                
+GND                          : H13       : gnd    :                   :         :           :                
+VCCIO7                       : H14       : power  :                   : 2.5V    : 7         :                
+VCCIO7                       : H15       : power  :                   : 2.5V    : 7         :                
+VCCIO7                       : H16       : power  :                   : 2.5V    : 7         :                
+VCCIO7                       : H17       : power  :                   : 2.5V    : 7         :                
+GND                          : H18       : gnd    :                   :         :           :                
+VCCD_PLL2                    : H19       : power  :                   : 1.2V    :           :                
+current_pc_if_stage[13]      : H20       : output : 2.5 V             :         : 6         : N              
+current_pc_if_stage[18]      : H21       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[21]   : H22       : output : 2.5 V             :         : 6         : N              
+rdata2_out_ex_stage[26]      : H23       : output : 2.5 V             :         : 6         : N              
+GND                          : H24       : gnd    :                   :         :           :                
+current_pc_if_stage[25]      : H25       : output : 2.5 V             :         : 6         : N              
+current_pc_if_stage[20]      : H26       : output : 2.5 V             :         : 6         : N              
+instr_id_stage[30]           : J1        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : J2        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J3        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J4        :        :                   :         : 1B        :                
+GND                          : J5        : gnd    :                   :         :           :                
+VCCA3                        : J6        : power  :                   : 2.5V    :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : J7        :        :                   :         : 1A        :                
+mem_write_data_mem_stage[7]  : J8        : output : 2.5 V             :         : 1A        : N              
+VCCA3                        : J9        : power  :                   : 2.5V    :           :                
+GND                          : J10       : gnd    :                   :         :           :                
+VCCIO8                       : J11       : power  :                   : 2.5V    : 8         :                
+VCCIO8                       : J12       : power  :                   : 2.5V    : 8         :                
+VCCIO7                       : J13       : power  :                   : 2.5V    : 7         :                
+VCCIO7                       : J14       : power  :                   : 2.5V    : 7         :                
+GND                          : J15       : gnd    :                   :         :           :                
+VCCIO7                       : J16       : power  :                   : 2.5V    : 7         :                
+GND                          : J17       : gnd    :                   :         :           :                
+VCCA2                        : J18       : power  :                   : 2.5V    :           :                
+VCCIO6                       : J19       : power  :                   : 2.5V    : 6         :                
+rdata2_out_ex_stage[9]       : J20       : output : 2.5 V             :         : 6         : N              
+GND                          : J21       : gnd    :                   :         :           :                
+branch_target_ex_stage[22]   : J22       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[25]   : J23       : output : 2.5 V             :         : 6         : N              
+current_pc_if_stage[27]      : J24       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[6]    : J25       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[12]     : J26       : output : 2.5 V             :         : 6         : N              
+instr_id_stage[2]            : K1        : output : 2.5 V             :         : 1B        : N              
+GND                          : K2        : gnd    :                   :         :           :                
+instr_id_stage[6]            : K3        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : K4        :        :                   :         : 1A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K5        :        :                   :         : 1A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : K6        :        :                   :         : 1A        :                
+imm_ext_out_ex_stage[20]     : K7        : output : 2.5 V             :         : 1A        : N              
+GND                          : K8        : gnd    :                   :         :           :                
+VCC                          : K9        : power  :                   : 1.2V    :           :                
+mem_write_data_mem_stage[28] : K10       : output : 2.5 V             :         : 8         : N              
+alu_result_ex_stage[3]       : K11       : output : 2.5 V             :         : 8         : N              
+read_data_mem_stage[7]       : K12       : output : 2.5 V             :         : 8         : N              
+mem_addr_mem_stage[27]       : K13       : output : 2.5 V             :         : 7         : N              
+rdata2_out_ex_stage[5]       : K14       : output : 2.5 V             :         : 7         : N              
+wb_reg_write_wb_stage        : K15       : output : 2.5 V             :         : 7         : N              
+imm_ext_out_ex_stage[4]      : K16       : output : 2.5 V             :         : 6         : N              
+imm_ext_out_ex_stage[2]      : K17       : output : 2.5 V             :         : 6         : N              
+VCCIO6                       : K18       : power  :                   : 2.5V    : 6         :                
+GND                          : K19       : gnd    :                   :         :           :                
+VCCIO6                       : K20       : power  :                   : 2.5V    : 6         :                
+branch_target_ex_stage[3]    : K21       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[1]      : K22       : output : 2.5 V             :         : 6         : N              
+mem_write_data_mem_stage[27] : K23       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[9]    : K24       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[8]    : K25       : output : 2.5 V             :         : 6         : N              
+current_pc_if_stage[1]       : K26       : output : 2.5 V             :         : 6         : N              
+GND                          : L1        : gnd    :                   :         :           :                
+DNU                          : L2        :        :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L3        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 1B        :                
+GND                          : L5        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L6        :        :                   :         : 1A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 1A        :                
+VCCIO1A                      : L8        : power  :                   : 2.5V    : 1A        :                
+VCCIO1A                      : L9        : power  :                   : 2.5V    : 1A        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : L10       :        :                   :         : 1B        :                
+instr_id_stage[28]           : L11       : output : 2.5 V             :         : 1B        : N              
+rdata1_out_ex_stage[1]       : L12       : output : 2.5 V             :         : 8         : N              
+imm_ext_out_ex_stage[6]      : L13       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[12]      : L14       : output : 2.5 V             :         : 7         : N              
+rdata1_out_ex_stage[18]      : L15       : output : 2.5 V             :         : 7         : N              
+rdata2_out_ex_stage[18]      : L16       : output : 2.5 V             :         : 6         : N              
+rdata2_out_ex_stage[19]      : L17       : output : 2.5 V             :         : 6         : N              
+GND                          : L18       : gnd    :                   :         :           :                
+VCCIO6                       : L19       : power  :                   : 2.5V    : 6         :                
+VCCIO6                       : L20       : power  :                   : 2.5V    : 6         :                
+imm_ext_out_ex_stage[3]      : L21       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[7]      : L22       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[15]     : L23       : output : 2.5 V             :         : 6         : N              
+GND                          : L24       : gnd    :                   :         :           :                
+jump_target_ex_stage[2]      : L25       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[13]     : L26       : output : 2.5 V             :         : 6         : N              
+instr_id_stage[11]           : M1        : output : 2.5 V             :         : 2         : N              
+alu_result_ex_stage[24]      : M2        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M3        :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M4        :        :                   :         : 1B        :                
+imm_ext_out_ex_stage[25]     : M5        : output : 2.5 V             :         : 1B        : N              
+instr_id_stage[13]           : M6        : output : 2.5 V             :         : 1B        : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M7        :        :                   :         : 1B        :                
+VCCIO1B                      : M8        : power  :                   : 2.5V    : 1B        :                
+VCCIO1B                      : M9        : power  :                   : 2.5V    : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M10       :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : M11       :        :                   :         : 1B        :                
+VCC                          : M12       : power  :                   : 1.2V    :           :                
+GND                          : M13       : gnd    :                   :         :           :                
+VCC                          : M14       : power  :                   : 1.2V    :           :                
+GND                          : M15       : gnd    :                   :         :           :                
+instr_id_stage[24]           : M16       : output : 2.5 V             :         : 6         : N              
+mem_write_data_mem_stage[26] : M17       : output : 2.5 V             :         : 6         : N              
+VCCIO6                       : M18       : power  :                   : 2.5V    : 6         :                
+VCCIO6                       : M19       : power  :                   : 2.5V    : 6         :                
+GND                          : M20       : gnd    :                   :         :           :                
+wb_result_wb_stage[13]       : M21       : output : 2.5 V             :         : 6         : N              
+branch_target_ex_stage[28]   : M22       : output : 2.5 V             :         : 6         : N              
+mem_write_data_mem_stage[8]  : M23       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[9]      : M24       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[11]     : M25       : output : 2.5 V             :         : 6         : N              
+current_pc_if_stage[10]      : M26       : output : 2.5 V             :         : 6         : N              
+alu_result_ex_stage[17]      : N1        : output : 2.5 V             :         : 2         : N              
+GND                          : N2        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N3        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N4        :        :                   :         : 2         :                
+imm_ext_out_ex_stage[18]     : N5        : output : 2.5 V             :         : 2         : N              
+~ALTERA_TDO~                 : N6        : output : 2.5 V             :         : 1B        : N              
+~ALTERA_TDI~ / RESERVED_INPUT_WITH_WEAK_PULLUP : N7        : input  : 2.5 V Schmitt Trigger :         : 1B        : N              
+VCCIO1B                      : N8        : power  :                   : 2.5V    : 1B        :                
+GND                          : N9        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N10       :        :                   :         : 1B        :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : N11       :        :                   :         : 1B        :                
+GND                          : N12       : gnd    :                   :         :           :                
+VCC                          : N13       : power  :                   : 1.2V    :           :                
+VCC                          : N14       : power  :                   : 1.2V    :           :                
+VCC                          : N15       : power  :                   : 1.2V    :           :                
+current_pc_if_stage[16]      : N16       : output : 2.5 V             :         : 6         : N              
+mem_write_data_mem_stage[24] : N17       : output : 2.5 V             :         : 6         : N              
+VCCIO6                       : N18       : power  :                   : 2.5V    : 6         :                
+GND                          : N19       : gnd    :                   :         :           :                
+VCCIO6                       : N20       : power  :                   : 2.5V    : 6         :                
+mem_write_data_mem_stage[10] : N21       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[19]     : N22       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[28]     : N23       : output : 2.5 V             :         : 6         : N              
+current_pc_if_stage[5]       : N24       : output : 2.5 V             :         : 6         : N              
+current_pc_if_stage[7]       : N25       : output : 2.5 V             :         : 6         : N              
+jump_target_ex_stage[8]      : N26       : output : 2.5 V             :         : 6         : N              
+alu_result_ex_stage[30]      : P1        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : P2        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : P3        :        :                   :         : 2         :                
+alu_result_ex_stage[19]      : P4        : output : 2.5 V             :         : 2         : N              
+GND                          : P5        : gnd    :                   :         :           :                
+alu_result_ex_stage[11]      : P6        : output : 2.5 V             :         : 2         : N              
+instr_id_stage[14]           : P7        : output : 2.5 V             :         : 2         : N              
+VCCIO1B                      : P8        : power  :                   : 2.5V    : 1B        :                
+VCCIO2                       : P9        : power  :                   : 2.5V    : 2         :                
+alu_result_ex_stage[14]      : P10       : output : 2.5 V             :         : 2         : N              
+alu_control_code_ex_stage[3] : P11       : output : 2.5 V             :         : 2         : N              
+VCC                          : P12       : power  :                   : 1.2V    :           :                
+VCC                          : P13       : power  :                   : 1.2V    :           :                
+VCC                          : P14       : power  :                   : 1.2V    :           :                
+GND                          : P15       : gnd    :                   :         :           :                
+current_pc_if_stage[11]      : P16       : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[2]       : P17       : output : 2.5 V             :         : 5         : N              
+VCCIO5                       : P18       : power  :                   : 2.5V    : 5         :                
+VCCIO5                       : P19       : power  :                   : 2.5V    : 5         :                
+instr_id_stage[22]           : P20       : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[8]       : P21       : output : 2.5 V             :         : 5         : N              
+rdata1_out_ex_stage[9]       : P22       : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[4]       : P23       : output : 2.5 V             :         : 5         : N              
+GND                          : P24       : gnd    :                   :         :           :                
+current_pc_if_stage[22]      : P25       : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[30]      : P26       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R1        :        :                   :         : 2         :                
+alu_result_ex_stage[1]       : R2        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R3        :        :                   :         : 2         :                
+alu_result_ex_stage[5]       : R4        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : R5        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R6        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : R7        :        :                   :         : 2         :                
+GND                          : R8        : gnd    :                   :         :           :                
+VCCIO2                       : R9        : power  :                   : 2.5V    : 2         :                
+reset                        : R10       : input  : 2.5 V             :         : 2         : N              
+clk                          : R11       : input  : 2.5 V             :         : 2         : N              
+GND                          : R12       : gnd    :                   :         :           :                
+VCC                          : R13       : power  :                   : 1.2V    :           :                
+GND                          : R14       : gnd    :                   :         :           :                
+VCC                          : R15       : power  :                   : 1.2V    :           :                
+current_pc_if_stage[29]      : R16       : output : 2.5 V             :         : 5         : N              
+wb_result_wb_stage[27]       : R17       : output : 2.5 V             :         : 5         : N              
+GND                          : R18       : gnd    :                   :         :           :                
+VCCIO5                       : R19       : power  :                   : 2.5V    : 5         :                
+current_pc_if_stage[3]       : R20       : output : 2.5 V             :         : 5         : N              
+GND                          : R21       : gnd    :                   :         :           :                
+wb_result_wb_stage[20]       : R22       : output : 2.5 V             :         : 5         : N              
+wb_result_wb_stage[21]       : R23       : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[9]       : R24       : output : 2.5 V             :         : 5         : N              
+rdata1_out_ex_stage[26]      : R25       : output : 2.5 V             :         : 5         : N              
+wb_result_wb_stage[12]       : R26       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T1        :        :                   :         : 2         :                
+GND                          : T2        : gnd    :                   :         :           :                
+read_data_mem_stage[28]      : T3        : output : 2.5 V             :         : 2         : N              
+imm_ext_out_ex_stage[14]     : T4        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : T5        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T6        :        :                   :         : 2         :                
+VCCIO2                       : T7        : power  :                   : 2.5V    : 2         :                
+VCCIO2                       : T8        : power  :                   : 2.5V    : 2         :                
+GND                          : T9        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : T10       :        :                   :         : 2         :                
+read_data_mem_stage[24]      : T11       : output : 2.5 V             :         : 3         : N              
+mem_addr_mem_stage[20]       : T12       : output : 2.5 V             :         : 3         : N              
+alu_result_ex_stage[12]      : T13       : output : 2.5 V             :         : 4         : N              
+rd_out_ex_stage[3]           : T14       : output : 2.5 V             :         : 4         : N              
+alu_result_ex_stage[26]      : T15       : output : 2.5 V             :         : 4         : N              
+branch_target_ex_stage[11]   : T16       : output : 2.5 V             :         : 5         : N              
+jump_target_ex_stage[26]     : T17       : output : 2.5 V             :         : 5         : N              
+VCCIO5                       : T18       : power  :                   : 2.5V    : 5         :                
+VCCIO5                       : T19       : power  :                   : 2.5V    : 5         :                
+rdata1_out_ex_stage[24]      : T20       : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[0]       : T21       : output : 2.5 V             :         : 5         : N              
+jump_target_ex_stage[5]      : T22       : output : 2.5 V             :         : 5         : N              
+jump_target_ex_stage[3]      : T23       : output : 2.5 V             :         : 5         : N              
+rdata1_out_ex_stage[28]      : T24       : output : 2.5 V             :         : 5         : N              
+GND                          : T25       : gnd    :                   :         :           :                
+current_pc_if_stage[6]       : T26       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U1        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U2        :        :                   :         : 2         :                
+imm_ext_out_ex_stage[16]     : U3        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : U4        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U5        :        :                   :         : 2         :                
+mem_addr_mem_stage[5]        : U6        : output : 2.5 V             :         : 2         : N              
+GND                          : U7        : gnd    :                   :         :           :                
+VCCIO2                       : U8        : power  :                   : 2.5V    : 2         :                
+VCCIO2                       : U9        : power  :                   : 2.5V    : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : U10       :        :                   :         : 2         :                
+mem_write_data_mem_stage[15] : U11       : output : 2.5 V             :         : 3         : N              
+mem_addr_mem_stage[14]       : U12       : output : 2.5 V             :         : 3         : N              
+rdata2_out_ex_stage[17]      : U13       : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[16]       : U14       : output : 2.5 V             :         : 4         : N              
+rdata1_out_ex_stage[7]       : U15       : output : 2.5 V             :         : 4         : N              
+jump_target_ex_stage[16]     : U16       : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[26]   : U17       : output : 2.5 V             :         : 5         : N              
+VCCIO5                       : U18       : power  :                   : 2.5V    : 5         :                
+GND                          : U19       : gnd    :                   :         :           :                
+VCCIO5                       : U20       : power  :                   : 2.5V    : 5         :                
+branch_target_ex_stage[15]   : U21       : output : 2.5 V             :         : 5         : N              
+GND                          : U22       : gnd    :                   :         :           :                
+wb_result_wb_stage[17]       : U23       : output : 2.5 V             :         : 5         : N              
+mem_write_data_mem_stage[30] : U24       : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[28]      : U25       : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[15]      : U26       : output : 2.5 V             :         : 5         : N              
+imm_ext_out_ex_stage[29]     : V1        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V2        :        :                   :         : 2         :                
+alu_control_code_ex_stage[0] : V3        : output : 2.5 V             :         : 2         : N              
+instr_id_stage[27]           : V4        : output : 2.5 V             :         : 2         : N              
+GND                          : V5        : gnd    :                   :         :           :                
+instr_id_stage[12]           : V6        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : V7        :        :                   :         : 2         :                
+VCCIO2                       : V8        : power  :                   : 2.5V    : 2         :                
+VCCA1                        : V9        : power  :                   : 2.5V    :           :                
+VCCIO3                       : V10       : power  :                   : 2.5V    : 3         :                
+GND                          : V11       : gnd    :                   :         :           :                
+VCCIO3                       : V12       : power  :                   : 2.5V    : 3         :                
+GND                          : V13       : gnd    :                   :         :           :                
+VCCIO4                       : V14       : power  :                   : 2.5V    : 4         :                
+VCCIO4                       : V15       : power  :                   : 2.5V    : 4         :                
+GND                          : V16       : gnd    :                   :         :           :                
+VCCIO4                       : V17       : power  :                   : 2.5V    : 4         :                
+VCCA4                        : V18       : power  :                   : 2.5V    :           :                
+VCCIO5                       : V19       : power  :                   : 2.5V    : 5         :                
+GND                          : V20       : gnd    :                   :         :           :                
+current_pc_if_stage[21]      : V21       : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[26]      : V22       : output : 2.5 V             :         : 5         : N              
+jump_target_ex_stage[22]     : V23       : output : 2.5 V             :         : 5         : N              
+current_pc_if_stage[31]      : V24       : output : 2.5 V             :         : 5         : N              
+wb_result_wb_stage[14]       : V25       : output : 2.5 V             :         : 5         : N              
+wb_result_wb_stage[30]       : V26       : output : 2.5 V             :         : 5         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W1        :        :                   :         : 2         :                
+GND                          : W2        : gnd    :                   :         :           :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W3        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : W4        :        :                   :         : 2         :                
+imm_ext_out_ex_stage[15]     : W5        : output : 2.5 V             :         : 2         : N              
+imm_ext_out_ex_stage[5]      : W6        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : W7        :        :                   :         : 2         :                
+VCCD_PLL1                    : W8        : power  :                   : 1.2V    :           :                
+GND                          : W9        : gnd    :                   :         :           :                
+VCCIO3                       : W10       : power  :                   : 2.5V    : 3         :                
+VCCIO3                       : W11       : power  :                   : 2.5V    : 3         :                
+VCCIO3                       : W12       : power  :                   : 2.5V    : 3         :                
+VCCIO4                       : W13       : power  :                   : 2.5V    : 4         :                
+VCCIO4                       : W14       : power  :                   : 2.5V    : 4         :                
+GND                          : W15       : gnd    :                   :         :           :                
+VCCIO4                       : W16       : power  :                   : 2.5V    : 4         :                
+VCCIO4                       : W17       : power  :                   : 2.5V    : 4         :                
+GND                          : W18       : gnd    :                   :         :           :                
+VCCD_PLL4                    : W19       : power  :                   : 1.2V    :           :                
+VCCIO5                       : W20       : power  :                   : 2.5V    : 5         :                
+jump_target_ex_stage[17]     : W21       : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[29]   : W22       : output : 2.5 V             :         : 5         : N              
+rdata2_out_ex_stage[31]      : W23       : output : 2.5 V             :         : 5         : N              
+rdata2_out_ex_stage[30]      : W24       : output : 2.5 V             :         : 5         : N              
+GND                          : W25       : gnd    :                   :         :           :                
+wb_result_wb_stage[10]       : W26       : output : 2.5 V             :         : 5         : N              
+imm_ext_out_ex_stage[31]     : Y1        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y2        :        :                   :         : 2         :                
+imm_ext_out_ex_stage[27]     : Y3        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y4        :        :                   :         : 2         :                
+rd_out_ex_stage[4]           : Y5        : output : 2.5 V             :         : 2         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y6        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y7        :        :                   :         : 2         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y8        :        :                   :         : 3         :                
+RESERVED_INPUT_WITH_WEAK_PULLUP : Y9        :        :                   :         : 3         :                
+mem_write_out_ex_stage[1]    : Y10       : output : 2.5 V             :         : 3         : N              
+mem_addr_mem_stage[17]       : Y11       : output : 2.5 V             :         : 3         : N              
+mem_write_data_mem_stage[12] : Y12       : output : 2.5 V             :         : 3         : N              
+zero_flag_ex_stage           : Y13       : output : 2.5 V             :         : 4         : N              
+mem_addr_mem_stage[19]       : Y14       : output : 2.5 V             :         : 4         : N              
+VCCIO4                       : Y15       : power  :                   : 2.5V    : 4         :                
+mem_write_data_mem_stage[13] : Y16       : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[31]       : Y17       : output : 2.5 V             :         : 4         : N              
+wb_result_wb_stage[19]       : Y18       : output : 2.5 V             :         : 4         : N              
+branch_target_ex_stage[30]   : Y19       : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[23]   : Y20       : output : 2.5 V             :         : 5         : N              
+jump_target_ex_stage[27]     : Y21       : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[18]   : Y22       : output : 2.5 V             :         : 5         : N              
+GND                          : Y23       : gnd    :                   :         :           :                
+mem_write_data_mem_stage[29] : Y24       : output : 2.5 V             :         : 5         : N              
+branch_target_ex_stage[0]    : Y25       : output : 2.5 V             :         : 5         : N              
+jump_target_ex_stage[31]     : Y26       : output : 2.5 V             :         : 5         : N              

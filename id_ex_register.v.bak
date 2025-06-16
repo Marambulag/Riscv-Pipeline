@@ -1,0 +1,110 @@
+module id_ex_register (
+    input wire clk,
+    input wire reset,
+    input wire flush_ex, // From hazard unit, to flush EX stage (e.g., on mispredicted branch)
+    input wire stall_ex, // From hazard unit, to stall EX stage
+
+    // Inputs from ID stage
+    input wire [31:0] pc_in_id,          // PC of current instruction (for JALR/AUIPC base)
+    input wire [31:0] pc_plus_4_in_id,   // PC + 4 (for JAL)
+    input wire [31:0] rdata1_in_id,
+    input wire [31:0] rdata2_in_id,
+    input wire [31:0] imm_ext_in_id,
+    input wire [4:0]  rs2_in_id,         // rs2 address (for SW instruction)
+    input wire [4:0]  rd_in_id,          // Destination register address
+
+    // Control signals from ID stage
+    input wire        reg_write_in_id,
+    input wire        mem_read_in_id,
+    input wire        mem_write_in_id,
+    input wire [2:0]  alu_op_in_id,      // e.g., 3-bit for R-type, I-type, S-type etc.
+    input wire        alu_src_in_id,     // Selects ALU operand: rdata2 or imm_ext
+    input wire        branch_in_id,      // Indicates a branch instruction
+    input wire        jump_in_id,        // Indicates a jump instruction
+    input wire [1:0]  result_src_in_id,  // Selects data for write-back (ALU result, MemData, PC+4)
+    input wire [2:0]  funct3_in_id,      // funct3 from instruction (for ALU control/branch type)
+    input wire [6:0]  funct7_in_id,      // funct7 from instruction (for ALU control/R-type special)
+
+
+    // Outputs to EX stage
+    output reg [31:0] pc_out_ex,
+    output reg [31:0] pc_plus_4_out_ex,
+    output reg [31:0] rdata1_out_ex,
+    output reg [31:0] rdata2_out_ex,
+    output reg [31:0] imm_ext_out_ex,
+    output reg [4:0]  rs2_out_ex,
+    output reg [4:0]  rd_out_ex,
+
+    // Control signals to EX stage
+    output reg        reg_write_out_ex,
+    output reg        mem_read_out_ex,
+    output reg        mem_write_out_ex,
+    output reg [2:0]  alu_op_out_ex,
+    output reg        alu_src_out_ex,
+    output reg        branch_out_ex,
+    output reg        jump_out_ex,
+    output reg [1:0]  result_src_out_ex,
+    output reg [2:0]  funct3_out_ex,
+    output reg [6:0]  funct7_out_ex
+);
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            // Reset all outputs to default/invalid values
+            pc_out_ex           <= 32'b0;
+            pc_plus_4_out_ex    <= 32'b0;
+            rdata1_out_ex       <= 32'b0;
+            rdata2_out_ex       <= 32'b0;
+            imm_ext_out_ex      <= 32'b0;
+            rs2_out_ex          <= 5'b0;
+            rd_out_ex           <= 5'b0;
+            reg_write_out_ex    <= 1'b0;
+            mem_read_out_ex     <= 1'b0;
+            mem_write_out_ex    <= 1'b0;
+            alu_op_out_ex       <= 3'b0;
+            alu_src_out_ex      <= 1'b0;
+            branch_out_ex       <= 1'b0;
+            jump_out_ex         <= 1'b0;
+            result_src_out_ex   <= 2'b0;
+            funct3_out_ex       <= 3'b0;
+            funct7_out_ex       <= 7'b0;
+        end else if (flush_ex) begin // Flush on branch misprediction
+            pc_out_ex           <= 32'b0; // Or next PC, depending on flush logic
+            pc_plus_4_out_ex    <= 32'b0;
+            rdata1_out_ex       <= 32'b0;
+            rdata2_out_ex       <= 32'b0;
+            imm_ext_out_ex      <= 32'b0;
+            rs2_out_ex          <= 5'b0;
+            rd_out_ex           <= 5'b0;
+            reg_write_out_ex    <= 1'b0; // Disable write-back for flushed instruction
+            mem_read_out_ex     <= 1'b0;
+            mem_write_out_ex    <= 1'b0;
+            alu_op_out_ex       <= 3'b0;
+            alu_src_out_ex      <= 1'b0;
+            branch_out_ex       <= 1'b0;
+            jump_out_ex         <= 1'b0;
+            result_src_out_ex   <= 2'b0;
+            funct3_out_ex       <= 3'b0;
+            funct7_out_ex       <= 7'b0;
+        end else if (~stall_ex) begin // Only update if not stalled
+            pc_out_ex           <= pc_in_id;
+            pc_plus_4_out_ex    <= pc_plus_4_in_id;
+            rdata1_out_ex       <= rdata1_in_id;
+            rdata2_out_ex       <= rdata2_in_id;
+            imm_ext_out_ex      <= imm_ext_in_id;
+            rs2_out_ex          <= rs2_in_id;
+            rd_out_ex           <= rd_in_id;
+            reg_write_out_ex    <= reg_write_in_id;
+            mem_read_out_ex     <= mem_read_in_id;
+            mem_write_out_ex    <= mem_write_in_id;
+            alu_op_out_ex       <= alu_op_in_id;
+            alu_src_out_ex      <= alu_src_in_id;
+            branch_out_ex       <= branch_in_id;
+            jump_out_ex         <= jump_in_id;
+            result_src_out_ex   <= result_src_in_id;
+            funct3_out_ex       <= funct3_in_id;
+            funct7_out_ex       <= funct7_in_id;
+        end
+    end
+
+endmodule

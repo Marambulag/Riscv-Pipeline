@@ -1,0 +1,507 @@
+m255
+K4
+z2
+!s12c _opt
+Z0 !s99 nomlopt
+!s11f vlog 2024.3 2024.09, Sep 10 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/home/manuel/rvpipeline/simulation/questa
+T_opt
+Z2 !s110 1750049699
+VF_SX0XeAE_e>T5QV8SKF;0
+04 5 4 work ex_tb fast 0
+=1-000ae431a4f1-684fa3a3-c0965-9fa3
+R0
+!s12f OEM100
+!s12b OEM100
+!s124 OEM10U3 
+!s135 nogc
+o-quiet -auto_acc_if_foreign -work work -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work +acc
+Z3 tCvgOpt 0
+n@_opt
+OL;O;2024.3;79
+vadder
+2/home/manuel/rvpipeline/adder.v
+Z4 !s110 1750049698
+!i10b 1
+!s100 gTZl>I58Ldblkd<]jdAGz1
+I;L2W2Yl8<nh1dR]F=NR^D0
+R1
+w1749254934
+8/home/manuel/rvpipeline/adder.v
+F/home/manuel/rvpipeline/adder.v
+!i122 1
+L0 1 9
+Z5 VDg1SIo80bB@j0V0VzS_@n1
+Z6 OL;L;2024.3;79
+r1
+!s85 0
+31
+Z7 !s108 1750049698.000000
+!s107 /home/manuel/rvpipeline/adder.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/adder.v|
+!i113 0
+Z8 o-vlog01compat -work work -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+Z9 !s92 -vlog01compat -work work +incdir+/home/manuel/rvpipeline -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R3
+valu
+2/home/manuel/rvpipeline/alu.v
+R2
+!i10b 1
+!s100 A=dd^^@L?XdHQ[`5mbzUz2
+IAVljGWo1U:Sj50S=A]^kd3
+R1
+Z10 w1750020608
+8/home/manuel/rvpipeline/alu.v
+F/home/manuel/rvpipeline/alu.v
+!i122 12
+L0 1 77
+R5
+R6
+r1
+!s85 0
+31
+Z11 !s108 1750049699.000000
+!s107 /home/manuel/rvpipeline/alu.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/alu.v|
+!i113 0
+R8
+R9
+R3
+valu_control
+2/home/manuel/rvpipeline/alu_control.v
+R2
+!i10b 1
+!s100 imjN8LiO=jMMRz0e_oRHk1
+I6icQSC2PObe3E]eZ]Z;EN3
+R1
+R10
+8/home/manuel/rvpipeline/alu_control.v
+F/home/manuel/rvpipeline/alu_control.v
+!i122 11
+L0 1 59
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/alu_control.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/alu_control.v|
+!i113 0
+R8
+R9
+R3
+vcontrol_unit
+2/home/manuel/rvpipeline/control_unit.v
+R4
+!i10b 1
+!s100 S=7420K`KnNIZ]0Xb1TAY3
+IDDXTKL=j4jHJZ0R8[l][n1
+R1
+w1750020606
+8/home/manuel/rvpipeline/control_unit.v
+F/home/manuel/rvpipeline/control_unit.v
+!i122 4
+L0 1 107
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/manuel/rvpipeline/control_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/control_unit.v|
+!i113 0
+R8
+R9
+R3
+vdata_memory
+2/home/manuel/rvpipeline/data_memory.v
+R2
+!i10b 1
+!s100 gi03Q8<nV`_^OnD3UKeb`1
+I_@E<^10_5X`11lAeE]_bN3
+R1
+R10
+8/home/manuel/rvpipeline/data_memory.v
+F/home/manuel/rvpipeline/data_memory.v
+!i122 14
+L0 1 50
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/data_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/data_memory.v|
+!i113 0
+R8
+R9
+R3
+vdecode
+2/home/manuel/rvpipeline/decode.v
+R2
+!i10b 1
+!s100 :R:J<JoR>;h]^C:Bl9hmF1
+I^[B;4We@2PBa4k`f_GKHA2
+R1
+w1749322857
+8/home/manuel/rvpipeline/decode.v
+F/home/manuel/rvpipeline/decode.v
+!i122 7
+L0 1 92
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/manuel/rvpipeline/decode.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/decode.v|
+!i113 0
+R8
+R9
+R3
+vex_mem_register
+2/home/manuel/rvpipeline/ex_mem_register.v
+R2
+!i10b 1
+!s100 @R8jczEBVMQm2d=nP5DD=1
+IGIbUk9UZDC^ElMiJ<9_9K3
+R1
+Z12 w1750020609
+8/home/manuel/rvpipeline/ex_mem_register.v
+F/home/manuel/rvpipeline/ex_mem_register.v
+!i122 15
+L0 1 49
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/ex_mem_register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/ex_mem_register.v|
+!i113 0
+R8
+R9
+R3
+vex_tb
+2/home/manuel/rvpipeline/ex_tb.v
+R2
+!i10b 1
+!s100 :Nb`jFB]6JYYcFVXNKDb32
+Il8EPmQ?5DIn4]751@W<I:3
+R1
+w1750041840
+8/home/manuel/rvpipeline/ex_tb.v
+F/home/manuel/rvpipeline/ex_tb.v
+!i122 19
+L0 3 93
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/ex_tb.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/ex_tb.v|
+!i113 0
+R8
+R9
+R3
+vfetch
+2/home/manuel/rvpipeline/fetch.v
+R4
+!i10b 1
+!s100 @N8VKfiaIjcl4ESSR`c0L1
+I:JcC^gkmG^C<[Cme2BVPT0
+R1
+w1750019681
+8/home/manuel/rvpipeline/fetch.v
+F/home/manuel/rvpipeline/fetch.v
+!i122 3
+L0 1 52
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/manuel/rvpipeline/fetch.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/fetch.v|
+!i113 0
+R8
+R9
+R3
+vhazard_unit
+2/home/manuel/rvpipeline/hazard_unit.v
+R2
+!i10b 1
+!s100 KGl;GWl_ol`zM[B3e`lZB1
+IMah^X305gTBzjb[RL?3a@3
+R1
+w1750020610
+8/home/manuel/rvpipeline/hazard_unit.v
+F/home/manuel/rvpipeline/hazard_unit.v
+!i122 17
+L0 1 55
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/hazard_unit.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/hazard_unit.v|
+!i113 0
+R8
+R9
+R3
+vid_ex_register
+2/home/manuel/rvpipeline/id_ex_register.v
+R2
+!i10b 1
+!s100 KGO<h`6IYN@G6E4eP9hOa3
+IeY?LZ]SAEXg]2oP>CTk;^0
+R1
+R10
+8/home/manuel/rvpipeline/id_ex_register.v
+F/home/manuel/rvpipeline/id_ex_register.v
+!i122 10
+L0 1 109
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/id_ex_register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/id_ex_register.v|
+!i113 0
+R8
+R9
+R3
+vif_id_register
+2/home/manuel/rvpipeline/if_id_register.v
+R2
+!i10b 1
+!s100 V2247N7@O5dmGn3?mB>ZD3
+IIEPR;RgZN?8NAOdo]H^0z1
+R1
+Z13 w1750020607
+8/home/manuel/rvpipeline/if_id_register.v
+F/home/manuel/rvpipeline/if_id_register.v
+!i122 8
+Z14 L0 1 27
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/if_id_register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/if_id_register.v|
+!i113 0
+R8
+R9
+R3
+vimm_gen
+2/home/manuel/rvpipeline/imm_gen.v
+R4
+!i10b 1
+!s100 8^lUJh<nmG1]eXF2>nZiS1
+I1YBmKozRK>Z[F]JATi?0E3
+R1
+R13
+8/home/manuel/rvpipeline/imm_gen.v
+F/home/manuel/rvpipeline/imm_gen.v
+!i122 5
+R14
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/manuel/rvpipeline/imm_gen.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/imm_gen.v|
+!i113 0
+R8
+R9
+R3
+vinstruction_memory
+2/home/manuel/rvpipeline/instruction_memory.v
+R2
+!i10b 1
+!s100 2=Y;V7PE5^7V5G3NOG<g?3
+IhTGS1c1kCaV]dSl9NA9XD0
+R1
+w1750020605
+8/home/manuel/rvpipeline/instruction_memory.v
+F/home/manuel/rvpipeline/instruction_memory.v
+!i122 18
+L0 1 13
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/instruction_memory.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/instruction_memory.v|
+!i113 0
+R8
+R9
+R3
+vmem_wb_register
+2/home/manuel/rvpipeline/mem_wb_register.v
+R2
+!i10b 1
+!s100 =>YzXjf7ZA;3G;=2MoQCg2
+IGDkE3AEL0F3OXPHZnbR^32
+R1
+w1749325186
+8/home/manuel/rvpipeline/mem_wb_register.v
+F/home/manuel/rvpipeline/mem_wb_register.v
+!i122 13
+L0 1 41
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/mem_wb_register.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/mem_wb_register.v|
+!i113 0
+R8
+R9
+R3
+vmux2
+2/home/manuel/rvpipeline/mux2.v
+R4
+!i10b 1
+!s100 f1CAWX1@_?Y81I2LMA6HL0
+I728>jD;AeU`dA_^mAC]Aa3
+R1
+w1749254935
+8/home/manuel/rvpipeline/mux2.v
+F/home/manuel/rvpipeline/mux2.v
+!i122 2
+L0 1 10
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/manuel/rvpipeline/mux2.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/mux2.v|
+!i113 0
+R8
+R9
+R3
+vmux4
+2/home/manuel/rvpipeline/mux4.v
+R2
+!i10b 1
+!s100 f4Io]?`L71`W74K19TnSc3
+IDLeMla9czjTmeWLeEPa1z0
+R1
+R12
+8/home/manuel/rvpipeline/mux4.v
+F/home/manuel/rvpipeline/mux4.v
+!i122 16
+L0 1 18
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/mux4.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/mux4.v|
+!i113 0
+R8
+R9
+R3
+vprogram_counter
+2/home/manuel/rvpipeline/program_counter.v
+R4
+!i10b 1
+!s100 aIWiTh]4AE>?kNK=N4@nf1
+IJ=iBW2<=PJIE`:cE19zg;1
+R1
+w1750019631
+8/home/manuel/rvpipeline/program_counter.v
+F/home/manuel/rvpipeline/program_counter.v
+!i122 0
+L0 1 19
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/manuel/rvpipeline/program_counter.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/program_counter.v|
+!i113 0
+R8
+R9
+R3
+vregister_file
+2/home/manuel/rvpipeline/register_file.v
+R4
+!i10b 1
+!s100 GWR]:Pg0Id4m=52=`cdg<0
+IHXnJUMj9B7c8M8i8UbFPM0
+R1
+w1749323114
+8/home/manuel/rvpipeline/register_file.v
+F/home/manuel/rvpipeline/register_file.v
+!i122 6
+L0 1 29
+R5
+R6
+r1
+!s85 0
+31
+R7
+!s107 /home/manuel/rvpipeline/register_file.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/register_file.v|
+!i113 0
+R8
+R9
+R3
+vriscv_pipeline
+2/home/manuel/rvpipeline/riscv_pipeline.v
+R2
+!i10b 1
+!s100 Wm940F0Ac:zoz?ZaC[`843
+IzC=]<JV^BdJWbT7G1:mZK3
+R1
+R13
+8/home/manuel/rvpipeline/riscv_pipeline.v
+F/home/manuel/rvpipeline/riscv_pipeline.v
+!i122 9
+L0 1 426
+R5
+R6
+r1
+!s85 0
+31
+R11
+!s107 /home/manuel/rvpipeline/riscv_pipeline.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+/home/manuel/rvpipeline|/home/manuel/rvpipeline/riscv_pipeline.v|
+!i113 0
+R8
+R9
+R3

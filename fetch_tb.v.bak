@@ -1,0 +1,46 @@
+`timescale 1ns / 1ps
+
+module fetch_tb;
+
+  // Inputs
+  reg clk;
+  reg reset;
+  reg pc_write;
+  reg pc_src;
+  reg [31:0] branch_target;
+
+  // Outputs
+  wire [31:0] pc_out;
+  wire [31:0] instruction;
+
+  // Instantiate the Fetch module
+  fetch uut (
+    .clk(clk),
+    .reset(reset),
+    .pc_write(pc_write),
+    .pc_src(pc_src),
+    .branch_target(branch_target),
+    .pc_out(pc_out),
+    .instruction(instruction)
+  );
+
+  // Clock generation
+  always #5 clk = ~clk;  // 10 ns clock period
+
+  initial begin
+    // Initialize ROM content
+    $readmemh("program.hex", uut.imem.memory);  // Fill instruction memory manually here
+
+    // Initialize Inputs
+    clk = 0;
+    reset = 1;
+    pc_write = 1;
+    pc_src = 0;
+    branch_target = 32'd16;
+
+    // Reset pulse
+    #10 reset = 0;
+
+    // Wait and fetch next instruction
+    #10;
+    $display("PC: %0d | Inst

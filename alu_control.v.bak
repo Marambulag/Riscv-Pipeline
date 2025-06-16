@@ -1,0 +1,69 @@
+module alu_control (
+    input wire [2:0]  alu_op,    // From Control Unit
+    input wire [2:0]  funct3,    // From instruction
+    input wire [6:0]  funct7,    // From instruction
+
+    output wire [3:0] alu_control_out // 4-bit ALU operation code
+);
+
+    // ALU Control Codes (Example mapping, you might adjust based on your ALU implementation)
+    // ADD/SUB: 0000 (ADD), 1000 (SUB)
+    // SLL:     0001
+    // SLT:     0010
+    // SLTU:    0011
+    // XOR:     0100
+    // SRL/SRA: 0101 (SRL), 1101 (SRA)
+    // OR:      0110
+    // AND:     0111
+    // BEQ/BNE (sub/zero check): 0000 (for subtraction to check zero flag) - handled by ALU for compare
+    // JAL/JALR (add): 0000
+
+    reg [3:0] alu_op_code;
+
+    always @(*) begin
+        case (alu_op)
+            3'b000: begin // R-type instructions (ALU_OP = 000 for R-type)
+                case (funct3)
+                    3'b000: alu_op_code = (funct7[5]) ? 4'b1000 : 4'b0000; // ADD (0x00) / SUB (0x20) - funct7[5] is bit 30
+                    3'b001: alu_op_code = 4'b0001; // SLL
+                    3'b010: alu_op_code = 4'b0010; // SLT
+                    3'b011: alu_op_code = 4'b0011; // SLTU
+                    3'b100: alu_op_code = 4'b0100; // XOR
+                    3'b101: alu_op_code = (funct7[5]) ? 4'b1101 : 4'b0101; // SRL (0x00) / SRA (0x20)
+                    3'b110: alu_op_code = 4'b0110; // OR
+                    3'b111: alu_op_code = 4'b0111; // AND
+                    default: alu_op_code = 4'bxxxx; // Should not happen
+                endcase
+            end
+            3'b001: begin // I-type Load/JALR/ALU Imm (ALU_OP = 001 for I-type)
+                case (funct3)
+                    3'b000: alu_op_code = 4'b0000; // ADDI
+                    3'b001: alu_op_code = 4'b0001; // SLLI
+                    3'b010: alu_op_code = 4'b0010; // SLTI
+                    3'b011: alu_op_code = 4'b0011; // SLTIU
+                    3'b100: alu_op_code = 4'b0100; // XORI
+                    3'b101: alu_op_code = (funct7[5]) ? 4'b1101 : 4'b0101; // SRLI / SRAI
+                    3'b110: alu_op_code = 4'b0110; // ORI
+                    3'b111: alu_op_code = 4'b0111; // ANDI
+                    default: alu_op_code = 4'bxxxx; // Should not happen
+                endcase
+            end
+            3'b010: begin // S-type (Store) (ALU_OP = 010 for S-type) - always addition for address
+                alu_op_code = 4'b0000; // ADD for address calculation
+            end
+            3'b011: begin // B-type (Branch) (ALU_OP = 011 for B-type) - always subtraction for comparison
+                alu_op_code = 4'b1000; // SUB for comparison
+            end
+            3'b100: begin // J-type (JAL) (ALU_OP = 100 for JAL) - always addition (PC + Imm)
+                alu_op_code = 4'b0000; // ADD for address calculation
+            end
+            3'b101: begin // U-type (LUI/AUIPC) (ALU_OP = 101 for U-type) - LUI needs no ALU, AUIPC is ADD
+                alu_op_code = 4'b0000; // ADD (for AUIPC)
+            end
+            default: alu_op_code = 4'bxxxx; // Default or invalid ALUOp
+        endcase
+    end
+
+    assign alu_control_out = alu_op_code;
+
+endmodule

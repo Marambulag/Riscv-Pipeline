@@ -1,0 +1,255 @@
+# //  Questa Intel Starter FPGA Edition-64
+# //  Version 2024.3 linux_x86_64 Sep 10 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# do pipeline_run_msim_rtl_verilog.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Questa Intel Starter FPGA Edition-64 vmap 2024.3 Lib Mapping Utility 2024.09 Sep 10 2024
+# vmap work rtl_work 
+# Copying /home/manuel/intelFPGA_lite/24.1std/questa_fse/linux_x86_64/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/program_counter.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:58 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/program_counter.v 
+# -- Compiling module program_counter
+# 
+# Top level modules:
+# 	program_counter
+# End time: 22:54:58 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/adder.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:58 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/adder.v 
+# -- Compiling module adder
+# 
+# Top level modules:
+# 	adder
+# End time: 22:54:58 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/mux2.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:58 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/mux2.v 
+# -- Compiling module mux2
+# 
+# Top level modules:
+# 	mux2
+# End time: 22:54:58 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/fetch.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:58 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/fetch.v 
+# -- Compiling module fetch
+# 
+# Top level modules:
+# 	fetch
+# End time: 22:54:58 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/control_unit.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:58 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/control_unit.v 
+# -- Compiling module control_unit
+# 
+# Top level modules:
+# 	control_unit
+# End time: 22:54:58 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/imm_gen.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:58 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/imm_gen.v 
+# -- Compiling module imm_gen
+# 
+# Top level modules:
+# 	imm_gen
+# End time: 22:54:58 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/register_file.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:58 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/register_file.v 
+# -- Compiling module register_file
+# 
+# Top level modules:
+# 	register_file
+# End time: 22:54:58 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/decode.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:58 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/decode.v 
+# -- Compiling module decode
+# 
+# Top level modules:
+# 	decode
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/if_id_register.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/if_id_register.v 
+# -- Compiling module if_id_register
+# 
+# Top level modules:
+# 	if_id_register
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/riscv_pipeline.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/riscv_pipeline.v 
+# -- Compiling module riscv_pipeline
+# 
+# Top level modules:
+# 	riscv_pipeline
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/id_ex_register.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/id_ex_register.v 
+# -- Compiling module id_ex_register
+# 
+# Top level modules:
+# 	id_ex_register
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/alu_control.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/alu_control.v 
+# -- Compiling module alu_control
+# 
+# Top level modules:
+# 	alu_control
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/alu.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/alu.v 
+# -- Compiling module alu
+# 
+# Top level modules:
+# 	alu
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/mem_wb_register.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/mem_wb_register.v 
+# -- Compiling module mem_wb_register
+# 
+# Top level modules:
+# 	mem_wb_register
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/data_memory.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/data_memory.v 
+# -- Compiling module data_memory
+# 
+# Top level modules:
+# 	data_memory
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/ex_mem_register.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/ex_mem_register.v 
+# -- Compiling module ex_mem_register
+# 
+# Top level modules:
+# 	ex_mem_register
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/mux4.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/mux4.v 
+# -- Compiling module mux4
+# 
+# Top level modules:
+# 	mux4
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/hazard_unit.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/hazard_unit.v 
+# -- Compiling module hazard_unit
+# 
+# Top level modules:
+# 	hazard_unit
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/instruction_memory.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/instruction_memory.v 
+# -- Compiling module instruction_memory
+# 
+# Top level modules:
+# 	instruction_memory
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vlog -vlog01compat -work work +incdir+/home/manuel/rvpipeline {/home/manuel/rvpipeline/ex_tb.v}
+# Questa Intel Starter FPGA Edition-64 vlog 2024.3 Compiler 2024.09 Sep 10 2024
+# Start time: 22:54:59 on Jun 15,2025
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+/home/manuel/rvpipeline" /home/manuel/rvpipeline/ex_tb.v 
+# -- Compiling module ex_tb
+# 
+# Top level modules:
+# 	ex_tb
+# End time: 22:54:59 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs="+acc"  ex_tb
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L fiftyfivenm_ver -L rtl_work -L work -voptargs=""+acc"" ex_tb 
+# Start time: 22:54:59 on Jun 15,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10908) Some optimizations are turned off because the +acc switch is in effect.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.ex_tb(fast)
+# Loading work.alu_control(fast)
+# Loading work.alu(fast)
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# ---- Minimal EX Stage Testbench ----
+# ADDI x12 =         20
+# ADDI x11 =          4
+# ADD x11, x11, x11 =          8
+# ADD x12, x11, x12 =         28
+# JAL x0, 64 → PC + offset =        164
+# ** Note: $finish    : /home/manuel/rvpipeline/ex_tb.v(92)
+#    Time: 50 ns  Iteration: 0  Instance: /ex_tb
+# 1
+# Break in Module ex_tb at /home/manuel/rvpipeline/ex_tb.v line 92
+# End time: 22:58:48 on Jun 15,2025, Elapsed time: 0:03:49
+# Errors: 0, Warnings: 1
