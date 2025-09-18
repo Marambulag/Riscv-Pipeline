@@ -22,5 +22,6 @@ Forwarding (Bypassing): The processor uses data forwarding to pass results direc
 
 Stalling (Load-Use Hazards): A special case, known as a Load-Use hazard, is handled by stalling the pipeline for one clock cycle. This gives the load instruction time to fetch the required data from memory before the next instruction tries to use it.
 
-![Pipeline Test Bench](https://raw.githubusercontent.com/Marambulag/Riscv-Pipeline/master/pipeline_test_bench.png)
+![Pipeline Test Bench](https://raw.githubusercontent.com/Marambulag/Riscv-Pipeline/master/tb_pipeline.png)
+
 
