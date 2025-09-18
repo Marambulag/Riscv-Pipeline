@@ -1,8 +1,8 @@
 RISC-V Pipelined Processor
-This repository contains a SystemVerilog implementation of a 32-bit RISC-V processor with a five-stage pipeline. The core objective of this project is to demonstrate an efficient microarchitecture that can execute instructions concurrently, significantly improving performance. This design focuses on handling data dependencies and potential conflicts that arise in a pipelined system.
+This repository contains a Verilog implementation of a 32-bit RISC-V processor with a five-stage pipeline. The core objective of this project is to demonstrate an efficient microarchitecture that can execute instructions concurrently, significantly improving performance. This design focuses on handling data dependencies and potential conflicts that arise in a pipelined system.
 
 Project Highlights
-This processor design includes key features that are critical for modern CPU architectures:
+This processor design includes key features
 
 Five-Stage Pipeline: The processor's core is built around a classic five-stage pipeline (IF, ID, EX, MEM, WB) to maximize instruction throughput.
 
@@ -22,5 +22,5 @@ Forwarding (Bypassing): The processor uses data forwarding to pass results direc
 
 Stalling (Load-Use Hazards): A special case, known as a Load-Use hazard, is handled by stalling the pipeline for one clock cycle. This gives the load instruction time to fetch the required data from memory before the next instruction tries to use it.
 
-![Pipeline Test Bench](https://raw.githubusercontent.com/Marambulag/Riscv-Pipeline/master/docs/pipeline_test_bench.png)
+![Pipeline Test Bench](https://raw.githubusercontent.com/Marambulag/Riscv-Pipeline/master/pipeline_test_bench.png)
 
