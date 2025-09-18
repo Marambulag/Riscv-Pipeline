@@ -21,4 +21,6 @@ Hazard Unit: A dedicated hazard_unit module is implemented to detect and resolve
 Forwarding (Bypassing): The processor uses data forwarding to pass results directly from one stage to a previous one. This technique resolves most Read-After-Write (RAW) data hazards by providing data as soon as it's available, without waiting for the Write-Back stage.
 
 Stalling (Load-Use Hazards): A special case, known as a Load-Use hazard, is handled by stalling the pipeline for one clock cycle. This gives the load instruction time to fetch the required data from memory before the next instruction tries to use it.
-![Pipeline Test_Bench](images/tb_pipeline.png)
+
+![Pipeline Test Bench](https://raw.githubusercontent.com/Marambulag/Riscv-Pipeline/master/docs/pipeline_test_bench.png)
+
