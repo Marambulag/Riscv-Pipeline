@@ -23,6 +23,39 @@ Forwarding (Bypassing): The processor uses data forwarding to pass results direc
 Stalling (Load-Use Hazards): A special case, known as a Load-Use hazard, is handled by stalling the pipeline for one clock cycle. This gives the load instruction time to fetch the required data from memory before the next instruction tries to use it.
 
 ![Pipeline Test Bench](https://raw.githubusercontent.com/Marambulag/Riscv-Pipeline/master/tb_pipeline.png)
+Test Program Example
 
+To validate the pipeline, we executed the following program:
 
+01400613   # addi x12, x0, 20
+00400593   # addi x11, x0, 4
+00b585b3   # add  x11, x11, x11
+00c58633   # add  x12, x11, x12
+0400006f   # jal  x0, 64
+
+Execution Trace
+
+Initial values:
+
+x12 = 20
+
+x11 = 4
+
+Operations:
+
+x11 = x11 + x11 → x11 = 8
+
+x12 = x11 + x12 → x12 = 8 + 20 = 28
+
+Correct Results
+
+x11 = 8
+
+x12 = 28
+
+Why This Validates the Hazard Unit
+
+Notice that the instruction add x12, x11, x12 depends on the updated value of x11 that was just produced in the previous cycle.
+Without a functioning hazard detection and forwarding unit, the pipeline would read the old value of x11 = 4, producing the wrong result (x12 = 24 instead of 28).
+Since the CPU produces the correct value (x12 = 28), this confirms that the hazard unit correctly handles read-after-write (RAW) hazards by forwarding the new value of x11 into the next instruction.
 
